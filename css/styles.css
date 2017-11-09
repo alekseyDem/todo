@@ -49,7 +49,6 @@ li:hover {
   background-color: #FBB06C;
 }
 .filter-button:hover, button:hover, .filter-button:active, button:active {
-  /*border: 1px solid black;*/
   background-color: #FBC492;
 }
 .filter-button:focus {
@@ -57,7 +56,6 @@ li:hover {
 }
 
 .filter-button-active {
-  /*border: 1px solid black;*/
   background-color: #FFCC00;
 }
 .deleteBtn {

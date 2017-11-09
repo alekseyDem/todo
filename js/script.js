@@ -6,9 +6,7 @@ var module = (function () {
 
       var TODO_HOLDER = document.getElementsByClassName(holderClassName)[0]
 
-    // INITIAL TODO-LIST END
-
-    // CREATE INITIAL LAYOUT
+  // CREATE INITIAL LAYOUT
 
     var filterButtonsTemplates = [
       'all',
@@ -37,38 +35,22 @@ var module = (function () {
 
 
   // create form start
-    var formHtmlGenerated = document.createElement('form');
-    formHtmlGenerated.setAttribute('id', 'todo-add-form');
-    // create form controls
-    var inputTextHtmlGenerated = document.createElement('input');
-    inputTextHtmlGenerated.setAttribute('type', 'text');
-    inputTextHtmlGenerated.setAttribute('name', 'title');
-    inputTextHtmlGenerated.setAttribute('placeholder', 'add todo');
+    var formHtmlGenerated = `
+      <form id='todo-add-form'>
+        <input type='text' name='title' placeholder='add todo'/>
+        <input type='date' name='deadline'/>
+        <button type='submit'>submit</button>
+        <button type='reset'>reset</button>
+    `;
+    var formHolder = document.createElement('div');
+    formHolder.innerHTML = formHtmlGenerated;
 
-    var inputDateHtmlGenerated = document.createElement('input');
-    inputDateHtmlGenerated.setAttribute('type', 'date');
-    inputDateHtmlGenerated.setAttribute('name', 'deadline');
-
-    var buttonSubmitHtmlGenerated = document.createElement('button');
-    buttonSubmitHtmlGenerated.setAttribute('type', 'submit');
-    buttonSubmitHtmlGenerated.innerHTML = 'submit';
-
-    var buttonResetHtmlGenerated = document.createElement('button');
-    buttonResetHtmlGenerated.setAttribute('type', 'reset');
-    buttonResetHtmlGenerated.innerHTML = 'reset';
-
-
-    formHtmlGenerated.appendChild(inputTextHtmlGenerated);
-    formHtmlGenerated.appendChild(inputDateHtmlGenerated);
-    formHtmlGenerated.appendChild(buttonSubmitHtmlGenerated);
-    formHtmlGenerated.appendChild(buttonResetHtmlGenerated);
-
-    // create form end
     var ulHTMLGenerated = document.createElement('ul');
     ulHTMLGenerated.setAttribute('id', 'todos-list-output');
 
     todoWrapper.appendChild(filtersWrapper);
-    todoWrapper.appendChild(formHtmlGenerated);
+    // todoWrapper.appendChild(formHtmlGenerated);
+    todoWrapper.appendChild(formHolder);
     todoWrapper.appendChild(ulHTMLGenerated);
 
 
@@ -80,24 +62,24 @@ var module = (function () {
 
   // INITIAL TODO-LIST START
   var dataTodosList = [
-    // {
-    //     "id": 8784,
-    //     "title": "blabla",
-    //     "isDone": false,
-    //     "deadline": "data"
-    //   },
-    //   {
-    //     "id": 1324,
-    //     "title": "blabla1",
-    //     "isDone": true,
-    //     "deadline": "data"
-    //   },
-    //   {
-    //     "id": 123144,
-    //     "title": "blabla2",
-    //     "isDone": true,
-    //     "deadline": "data"
-    //   }
+    {
+        "id": 8784,
+        "title": "blabla",
+        "isDone": false,
+        "deadline": "data"
+      },
+      {
+        "id": 1324,
+        "title": "blabla1",
+        "isDone": true,
+        "deadline": "data"
+      },
+      {
+        "id": 123144,
+        "title": "blabla2",
+        "isDone": true,
+        "deadline": "data"
+      }
   ];
 
     // INITIAL TODO-LIST END
